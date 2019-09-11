@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-control {
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            height: calc(32px + 2px);
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.42857143;
+            color: #555555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        body {
+            width: 300px;
+            padding: 16px;
+            margin: 0;
+        }
+        #controls {
+            margin-top: 16px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        #controls > * {
+            height: 32px;
+            margin-left: 16px;
+        }
+        #controls > *:first-child {
+            margin-left: 0;
+        }
+        #controls > a {
+            vertical-align: middle;
+            line-height: 32px;
+        }
+        #save {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <label id="label" for="neptune-api-token">Api Token</label>
+    <input id="neptune-api-token" type="text" class="form-control">
+    <dib id="controls">
+        <a href="https://ui.neptune.ml" target="_blank">ui.neptune.ml</a>
+        <button id="save">Save</button>
+    </div>
+    <script>
+        document.getElementById("save").onclick = function() {
+            chrome.storage.sync.set({"token": document.getElementById("neptune-api-token").value});
+            window.close();
+        }
+        
+        chrome.storage.sync.get(["token"], (result) => {
+            if (result.token) {
+                document.getElementById("neptune-api-token").value = result.token;
+            }
+        });
+    </script>
+</body>
+</html>
