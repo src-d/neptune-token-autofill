@@ -8,7 +8,9 @@ When you click the "Configure" button of [Neptune.ml](https://neptune.ml) integr
 
 ## Installation
 
-The extension is currently under Google's review. The only way to install it right now is to clone this repo and [Load unpacked](https://stackoverflow.com/a/24577660/69708).
+Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/neptune-api-token-autofil/lhiogngfmogmgpkfpmphcgjbpbakopfi).
+
+It is also possible to clone this repo and [Load unpacked](https://stackoverflow.com/a/24577660/69708).
 
 ## Usage
 
