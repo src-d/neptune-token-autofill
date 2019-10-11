@@ -2,8 +2,11 @@
   for (let mutation of mutations) {
     if (!mutation.addedNodes) return;
     for (let node of mutation.addedNodes) {
-      if (node.id == "neptune_modal") {
+      if (node.id == "neptune_modal" || (node.className && node.className.includes("ReactModal__Overlay--after-open"))) {
           let token = document.getElementById("neptune-api-token");
+          if (!token) {
+             token = document.getElementsByClassName("configure-modal__input")[0];
+          }
           if (token.value == "") {
               chrome.storage.sync.get(["token"], (result) => {
                   if (result.token) {
