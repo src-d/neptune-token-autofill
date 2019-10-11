@@ -2,7 +2,7 @@
     "name": "Neptune API Token Autofiller for Jupyter",
     "author": "source{d}",
     "homepage_url": "https://github.com/src-d/neptune-token-autofill",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Automatically insert the Neptune API token to the Jupyter configuration dialogue.",
     "manifest_version": 2,
     "browser_action": {
